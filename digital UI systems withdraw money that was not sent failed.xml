@@ -1,0 +1,11 @@
+<transaction>
+    <status>failure</status>
+    <error>
+        <code>101</code>
+        <message>Insufficient funds. Unable to complete the withdrawal.</message>
+    </error>
+    <transactionId>123456789</transactionId>
+    <amount>100.00</amount>
+    <currency>USD</currency>
+    <timestamp>2024-09-13T15:30:00Z</timestamp>
+</transaction>
