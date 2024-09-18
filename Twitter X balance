@@ -1,0 +1,53 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class GiftCodeTransaction {
+    private String platform;
+    private String walletType;
+    private String walletAccount;
+    private String giftCode;
+    private String status;
+
+    public GiftCodeTransaction(String platform, String walletType, String walletAccount, String giftCode, String status) {
+        this.platform = platform;
+        this.walletType = walletType;
+        this.walletAccount = walletAccount;
+        this.giftCode = giftCode;
+        this.status = status;
+    }
+
+    public Map<String, String> toMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("Platform", platform);
+        map.put("WalletType", walletType);
+        map.put("WalletAccount", walletAccount);
+        map.put("GiftCode", giftCode);
+        map.put("Status", status);
+        return map;
+    }
+
+    public String toXML() {
+        return "<GiftCodeTransaction>\n" +
+               "   <Platform>" + platform + "</Platform>\n" +
+               "   <WalletType>" + walletType + "</WalletType>\n" +
+               "   <WalletAccount>" + walletAccount + "</WalletAccount>\n" +
+               "   <GiftCode>" + giftCode + "</GiftCode>\n" +
+               "   <Status>" + status + "</Status>\n" +
+               "</GiftCodeTransaction>";
+    }
+
+    public static void main(String[] args) {
+        // Example: create a gift code transaction
+        String platform = "Twitter X";
+        String walletType = "TON";
+        String walletAccount = "UQCCJTS37IIdUuMj4FfUWj42m1h7qmKuss_y1hCDbayLDqod";
+        String giftCode = "ATTRACTIVE_GIFT_CODE"; // Replace with actual gift code
+        String status = "Pending";
+
+        GiftCodeTransaction transaction = new GiftCodeTransaction(platform, walletType, walletAccount, giftCode, status);
+
+        // Print the XML format
+        System.out.println("Generated XML:");
+        System.out.println(transaction.toXML());
+    }
+}
